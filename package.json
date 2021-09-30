@@ -1,0 +1,30 @@
+{
+  "name": "edwinperaltaexerciseapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --watch server server/index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EdwinP12/EdwinPeraltaExerciseApp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "4.17.1",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  },
+  "bugs": {
+    "url": "https://github.com/EdwinP12/EdwinPeraltaExerciseApp/issues"
+  },
+  "homepage": "https://github.com/EdwinP12/EdwinPeraltaExerciseApp#readme"
+}
