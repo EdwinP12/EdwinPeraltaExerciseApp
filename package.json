@@ -1,11 +1,6 @@
 {
   "name": "edwinperaltaexerciseapp",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "directories": {
-    "doc": "docs"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon --watch server server/index"
@@ -22,9 +17,5 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.12"
-  },
-  "bugs": {
-    "url": "https://github.com/EdwinP12/EdwinPeraltaExerciseApp/issues"
-  },
-  "homepage": "https://github.com/EdwinP12/EdwinPeraltaExerciseApp#readme"
+  }
 }
