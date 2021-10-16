@@ -29,9 +29,9 @@
 </label>
 <button class="button is-block is-danger is-large is-fullwidth">Login</button>
 <p class="has-text-grey">
-  <a href="SignUpPage.html">Sign Up</a> &nbsp;·&nbsp;
-  <a href="ContactPage.html">Forgot Password</a> &nbsp;·&nbsp;
-  <a href="ContactPage.html">Need Help?</a>
+  <router-link to="SignUp">Sign Up</router-link> &nbsp;·&nbsp;
+  <router-link to="Contact">Forgot Password</router-link> &nbsp;·&nbsp;
+  <router-link to="Contact">Need Help?</router-link>
 </p>
       </div>
     </div>

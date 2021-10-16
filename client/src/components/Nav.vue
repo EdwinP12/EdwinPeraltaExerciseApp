@@ -7,8 +7,8 @@
     </div>
     <ul class="topnav">
       <li><router-link class="active" to="/" active-class="is-active">Home</router-link></li>
-      <li><router-link to="DietsPage.html">Diets</router-link></li>
-      <li><a href="ContactPage.html">Contact</a></li>
+      <li><router-link to="/diet" active-class="is-active">Diets</router-link></li>
+      <li><router-link to="/contact">Contact</router-link></li>
       <div class="dropdown">
         <button class="dropbtn">Exercises 
           <i class="fa fa-caret-down"></i>
@@ -18,7 +18,7 @@
           <a href="ExercisePage.html">Workouts</a>
         </div>
       </div>
-      <li><a href="ActivityCalander.html">Activites</a></li>
+      <li><router-link to="/activities">Activites</router-link></li>
       <li class="active"><a href="#about">About</a></li>
       <li class="right"><a href="#profile">Profile</a></li>
       <li class="right"><a href="#addfriends">Friends</a></li>
