@@ -1,9 +1,6 @@
 <template>
-  <div class="buttons" v-if="!Session.user">
-          <a class="button is-primary">
-            <strong>Sign up</strong>
-          </a>
-          <a class="button is-light" @click="login">
+  <div v-if="!Session.user">
+          <a @click="login">
             Log in
           </a>
         </div>

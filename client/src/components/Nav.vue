@@ -1,78 +1,31 @@
 <template>
-  <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a class="navbar-item" href="https://bulma.io">
-      <img src="../assets/logo.png" height="28">
-      <h3 class="title">Be Happy</h3>
-    </a>
-
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" :class="{'is-active': isActive }" @click="isActive = !isActive" >
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-
-  <div class="navbar-menu " :class="{'is-active': isActive }">
-    <div class="navbar-start">
-      <router-link class="navbar-item is-tab" to="/" active-class="is-active" exact>
-        Home
-      </router-link>
-
-      <router-link class="navbar-item is-tab" to="/feed" active-class="is-active">
-        Feed
-      </router-link>
-
-      <router-link class="navbar-item is-tab" to="/about" active-class="is-active">
-        Diets
-      </router-link>
-      
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          Exercises
-        </a>
-
-        <div class="navbar-dropdown">
-          <router-link class="navbar-item is-tab" to="about" active-class="is-active">
-            Stretches
-          </router-link>
-          <a class="navbar-item">
-            Workouts
-          </a>
+<div>
+  <div>
+      <nav class="background_layer">
+        <img src="data:image/jpeg;base64,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" alt="" width = 350 height = 150 class="center">
+      </nav>
+    </div>
+    <ul class="topnav">
+      <li><router-link class="active" to="/" active-class="is-active">Home</router-link></li>
+      <li><router-link to="DietsPage.html">Diets</router-link></li>
+      <li><a href="ContactPage.html">Contact</a></li>
+      <div class="dropdown">
+        <button class="dropbtn">Exercises 
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="ExercisePage.html">Stretches</a>
+          <a href="ExercisePage.html">Workouts</a>
         </div>
       </div>
-
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          More
-        </a>
-
-        <div class="navbar-dropdown">
-          <router-link class="navbar-item is-tab" to="about" active-class="is-active">
-            About
-          </router-link>
-          <a class="navbar-item">
-            Jobs
-          </a>
-          <a class="navbar-item">
-            Contact
-          </a>
-          <hr class="navbar-divider">
-          <a class="navbar-item">
-            Report an issue
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="navbar-end">
-      <div class="navbar-item">
-        <login-badge />
-      </div>
-    </div>
-  </div>
-</nav>
-
+      <li><a href="ActivityCalander.html">Activites</a></li>
+      <li class="active"><a href="#about">About</a></li>
+      <li class="right"><a href="#profile">Profile</a></li>
+      <li class="right"><a href="#addfriends">Friends</a></li>
+      <li class="right"><login-badge /></li>
+    </ul>
+  <br>
+</div>
 </template>
 
 <script>
@@ -90,4 +43,98 @@ export default {
 </script>
 
 <style>
-</style>
+  body {margin: 0;}
+  
+  ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(25, 31, 66);
+  }
+  
+  ul.topnav li {float: left;}
+  
+  ul.topnav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  ul.topnav li a:hover:not(.active) {background-color: #111;}
+  
+  ul.topnav li a.active {background-color: #686868;}
+  
+  ul.topnav li.right 
+  {
+    float: right;
+    background-color: rgb(94, 93, 93);
+  }
+  
+  @media screen and (max-width: 600px) {
+    ul.topnav li.right, 
+    ul.topnav li {float: none;}
+  }
+  .center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.background_layer
+{
+  background-color: rgb(0, 0, 0);;
+}
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: rgb(0, 0, 0);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #040129;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: rgb(5, 1, 58);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.contact{
+  padding: 20px;
+  text-align: center;
+  background: rgb(5, 6, 54);
+  color: white;
+}
+  </style>
