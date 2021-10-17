@@ -9,17 +9,7 @@
       <li><router-link class="active" to="/" active-class="is-active">Home</router-link></li>
       <li><router-link to="/diet" active-class="is-active">Diets</router-link></li>
       <li><router-link to="/contact">Contact</router-link></li>
-      <div class="dropdown">
-        <button class="dropbtn">Exercises 
-          <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-content">
-          <a href="ExercisePage.html">Stretches</a>
-          <a href="ExercisePage.html">Workouts</a>
-        </div>
-      </div>
       <li><router-link to="/activities">Activites</router-link></li>
-      <li class="active"><a href="#about">About</a></li>
       <li class="right"><a href="#profile">Profile</a></li>
       <li class="right"><a href="#addfriends">Friends</a></li>
       <li class="right"><login-badge /></li>
