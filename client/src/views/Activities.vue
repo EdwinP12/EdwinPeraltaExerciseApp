@@ -1,6 +1,6 @@
 <template>
 <div>
-    <h1>Activity Calendar</h1>
+    <h1><strong>Activity Calendar</strong></h1>
 <div class="month">      
   <ul>
     <li class="prev">&#10094;</li>

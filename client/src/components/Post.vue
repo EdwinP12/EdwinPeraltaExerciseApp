@@ -13,7 +13,7 @@
         </figure>
       </div>
       <div class="media-content">
-        <p class="title is-4">{{post.user.firstName}} {{post.user.lastName}}</p>
+        <p class="title is-4"> {{post.user.firstName}} {{post.user.lastName}} </p>
         <p class="subtitle is-6">{{post.user.handle}}</p>
       </div>
     </div>
@@ -26,22 +26,21 @@
       <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
     </div>
   </div>
-  <div class="card">
-  <footer class="card-footer">
-    <a href="#" class="card-footer-item">Save</a>
-    <a href="#" class="card-footer-item">Edit</a>
-    <a href="#" class="card-footer-item">Delete</a>
+    <footer class="card-footer">
+        <a href="#" class="card-footer-item">Save</a>
+        <a href="#" class="card-footer-item">Edit</a>
+        <a href="#" class="card-footer-item">Delete</a>
   </footer>
-</div>
 </div>
 </template>
 
 <script>
 export default {
-
+    props: {
+        post: Object
+    }
 }
 </script>
 
 <style>
-
-</style>
+</style> 

@@ -7,7 +7,7 @@ import Activities from "../views/Activities.vue";
 import Contact from "../views/Contact.vue";
 import SignUp from "../views/SignUp.vue";
 import Profile from "../views/Profile.vue";
-
+import Exercises from "../views/Exercises.vue";
 const routes = [
     {
         path: '/',
@@ -49,6 +49,12 @@ const routes = [
         name: 'Activities',
         component: Activities,
         meta: { requiresLogin: true }
+      },
+      {
+        path: '/exercises',
+        name: 'Exercises',
+        component: Exercises,
+        meta: { requiresLogin: false }
       },
     {
         path: '/about',

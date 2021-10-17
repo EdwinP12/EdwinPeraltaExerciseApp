@@ -4,7 +4,7 @@
             Log in
           </a>
         </div>
-        <div v-else>
+        <div class="name" v-else>
             Hello {{name}}
         </div>
 </template>
@@ -34,5 +34,8 @@ export default {
 </script>
 
 <style>
-
+.name{
+    color: antiquewhite;
+    background-color:rgb(25, 31, 66);
+}
 </style>

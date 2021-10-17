@@ -10,7 +10,9 @@
       <li><router-link to="/diet" active-class="is-active">Diets</router-link></li>
       <li><router-link to="/contact">Contact</router-link></li>
       <li><router-link to="/activities">Activites</router-link></li>
-      <li class="right"><a href="#profile">Profile</a></li>
+      <li><router-link to="/exercises">Exercises</router-link></li>
+      <li><router-link to="/feed">Feed</router-link></li>
+      <li class="right"><router-link to="/profile">Profile</router-link></li>
       <li class="right"><a href="#addfriends">Friends</a></li>
       <li class="right"><login-badge /></li>
     </ul>
@@ -105,7 +107,7 @@ export default {
   z-index: 1;
 }
 
-.dropdown-content a {
+.dropdown-content  {
   float: none;
   color: white;
   padding: 12px 16px;
