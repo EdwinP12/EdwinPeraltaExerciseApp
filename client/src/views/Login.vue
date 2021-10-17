@@ -38,9 +38,9 @@
         </p>
         </div>
 <p class="has-text-grey">
-  <a href="SignUpPage.html">Sign Up</a> &nbsp;·&nbsp;
-  <a href="ContactPage.html">Forgot Password</a> &nbsp;·&nbsp;
-  <a href="ContactPage.html">Need Help?</a>
+  <router-link to="/signup"><button class ="more">Sign Up</button></router-link>
+  <router-link to="/contact"><button class ="more">Forgot Password</button></router-link> 
+  <router-link to="/contact"><button class ="more"> Help?</button></router-link>
 </p>
       </div>
     </div>
@@ -66,5 +66,14 @@ export default {
 </script>
 
 <style>
-
+.more {
+  background-color: #000503;
+  color: white;
+  padding: 15px 10px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 20%;
+  opacity: 0.9;
+}
 </style>
