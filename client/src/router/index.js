@@ -9,6 +9,8 @@ import SignUp from "../views/SignUp.vue";
 import Profile from "../views/Profile.vue";
 import Exercises from "../views/Exercises.vue";
 import Friends from "../views/Friends.vue";
+import EditCalander from "../views/EditCalander.vue";
+
 const routes = [
     {
         path: '/',
@@ -64,9 +66,10 @@ const routes = [
         meta: { requiresLogin: true }
       },
     {
-        path: '/about',
-        name: 'About',
-        component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+        path: '/editcalander',
+        name: 'EditCalander',
+        component: EditCalander,
+        meta: { requiresLogin: true }
     },
     {
         path: '/login',
