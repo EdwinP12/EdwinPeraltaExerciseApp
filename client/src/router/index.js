@@ -8,6 +8,7 @@ import Contact from "../views/Contact.vue";
 import SignUp from "../views/SignUp.vue";
 import Profile from "../views/Profile.vue";
 import Exercises from "../views/Exercises.vue";
+import Friends from "../views/Friends.vue";
 const routes = [
     {
         path: '/',
@@ -55,6 +56,12 @@ const routes = [
         name: 'Exercises',
         component: Exercises,
         meta: { requiresLogin: false }
+      },
+      {
+        path: '/friends',
+        name: 'Friends',
+        component: Friends,
+        meta: { requiresLogin: true }
       },
     {
         path: '/about',
