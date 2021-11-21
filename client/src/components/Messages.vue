@@ -1,30 +1,29 @@
 <template>
-    <div class="messages">
-        <div class="notification is-light" :class="`is-${message.type}`" v-for = "(message, i) in messages" :key="i">
+    <div class="mesages">
+        <div class="notification is-light" :class="`is-${message.type}`" v-for="(message, i) in messages" :key="i">
             <button class="delete" @click.prevent="done(i)"></button>
             {{message.text}}
         </div>
-</div>
+    </div>
 </template>
 
 <script>
 import session from "../services/session";
-export default { 
-    data:()=>({
+export default {
+    data: ()=> ({
         messages: session.messages
     }),
     methods: {
         done(i){
-            this.messages.splice(i,1);
-
+            this.messages.splice(i, 1);
+            
         }
     }
 }
 </script>
 
 <style>
-    div.messages div.notification.is-light
-    {
+    div.messages div.notification.is-light {
         margin-bottom: 0px;
     }
 </style>

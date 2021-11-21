@@ -2,7 +2,7 @@ const bcrypt = require('bcrypt');
 const { ObjectId } = require('bson');
 const { client } = require('./mongo');
 
-const collection = client.db(process.env.MONGO_DB).collection('users');
+const collection = client.db(process.env.MONGO_DB).collection('user');
 module.exports.collection = collection;
 
 const list = [

@@ -1,5 +1,3 @@
-/*  B"H
-*/
 const express = require("express");
 const model = require("../models/posts");
 const comments = require("../models/comments");
