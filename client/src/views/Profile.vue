@@ -71,7 +71,7 @@ export default {
     background-color:rgb(249, 249, 250);
 }
 
-.card {
+.cardp {
     margin: auto;
     width: 350px;
     background-color: rgb(252, 252, 253);
@@ -84,7 +84,7 @@ export default {
     transition: all 0.5s
 }
 
-.card:hover .image img {
+.cardp:hover .image img {
     transform: scale(1.5)
 }
 

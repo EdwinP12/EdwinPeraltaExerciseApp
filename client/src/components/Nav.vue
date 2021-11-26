@@ -12,9 +12,9 @@
       <li><router-link to="/activities">Activites</router-link></li>
       <li><router-link to="/exercises">Exercises</router-link></li>
       <li><router-link to="/feed">Feed</router-link></li>
-      <li class="right"><router-link to="/profile">Profile</router-link></li>
-      <li class="right"><router-link to="/friends">Friends</router-link></li>
-      <li class="right"><login-badge /></li>
+      <li ><router-link to="/profile">Profile</router-link></li>
+      <li ><router-link to="/friends">Friends</router-link></li>
+      <li ><login-badge /></li>
     </ul>
   <br>
 </div>

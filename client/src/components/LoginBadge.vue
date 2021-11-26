@@ -4,7 +4,7 @@
             Log in
           </a>
     </div>
-    <div v-else>
+    <div v-else class="navname">
         Hello {{name}} 
     </div>
 </template>
@@ -32,4 +32,7 @@ export default {
 </script>
 
 <style>
+.navname {
+    color:white;
+}
 </style>

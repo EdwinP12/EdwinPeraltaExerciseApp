@@ -15,7 +15,7 @@
               </div>
           </div>
             -->
-        <div class="column is-half is-offset-one-quarter">
+        <div >
 
             <post-edit :new-post="newPost" @add="add()" />
 
@@ -25,7 +25,7 @@
 
         </div>
 
-        <div class="column">
+        <div >
             <post :post="newPost" />
         </div>
       </div>

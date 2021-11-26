@@ -19,6 +19,19 @@ const session = {
             this.Error(error);
         }
     },
+    async SignUp(email,fname,lname,handle,password){
+
+        try {
+            const response = await SignUp(email,fname,lname,handle,password);
+
+            this.user = response.user;
+    
+            router.push(this.toRoute);
+                
+        } catch (error) {
+            this.Error(error);
+        }
+    },
     Error(error){
         console.error(error);
         const msg = error.msg ?? error;

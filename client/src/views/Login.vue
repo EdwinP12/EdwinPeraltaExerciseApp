@@ -15,12 +15,12 @@
 <form>
   <div class="field">
     <div class="control">
-      <input class="input is-large" type="username" placeholder="Username" autofocus="">
+      <input class="input is-large" type="username" placeholder="Username" autofocus="" v-model="email">
     </div>
   </div>
   <div class="field">
     <div class="control">
-      <input class="input is-large" type="password" placeholder="Password">
+      <input class="input is-large" type="password" placeholder="Password" v-model="password">
     </div>
   </div>
 </form>

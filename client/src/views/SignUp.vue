@@ -6,16 +6,19 @@
     <hr>
 
     <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" required>
+    <input type="text" placeholder="Enter Email" name="email" v-model="email" required>
 
-    <label for="uname"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" required>
+    <label for="fname"><b>FirstName</b></label>
+    <input type="text" placeholder="Enter First Name" name="fname" v-model="fname" required>
+
+    <label for="lname"><b>LastName</b></label>
+    <input type="text" placeholder="Enter Last Name" name="lname" v-model="lname" required>
+
+    <label for="uname"><b>Handle</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" v-model="handle" required>
 
     <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
-
-    <label for="psw-repeat"><b>Repeat Password</b></label>
-    <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+    <input type="password" placeholder="Enter Password" name="psw" v-model="password" required>
     
     <label>
       <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
@@ -25,18 +28,27 @@
 
     <div class="clearfix">
       <button type="button" class="cancelbtn">Cancel</button>
-      <button type="submit" class="signupbtn">Sign Up</button>
+      <button type="submit" class="signupbtn" @click=signup >Sign Up</button>
     </div>
   </div>
 </form>
 </template>
 
 <script>
+import Session from "../services/session";
 export default {
-  name: 'SignUp',
-  components: {
-    
-  }
+    data: ()=>({
+      email:null,
+      fname: null,
+      lname: null,
+      handle: null,
+      password: null,
+    }),
+    methods: {
+        signup(){
+            this.Session.SignUp(this.email,this.fname,this.lname,this.handle, this.password);
+        }
+    }
 }
 </script>
 
