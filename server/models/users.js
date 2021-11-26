@@ -85,17 +85,6 @@ module.exports.Login = async function Login(handle, password){
 
     
 }
-module.exports.SignUp = async function SignUp(email,fname,lname,handle,password){
-    console.log({ email,fname,lname,handle,password})
-    const user = await collection.findOne({ handle });
-    
-    const data = { ...user, password: undefined };
-    
-    return { user: data };
-
-    
-}
-
 module.exports.Seed = async ()=>{
     for (const x of list) {
         await module.exports.Add(x)

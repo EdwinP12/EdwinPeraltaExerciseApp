@@ -35,7 +35,6 @@
 </template>
 
 <script>
-import Session from "../services/session";
 export default {
     data: ()=>({
       email:null,
@@ -46,7 +45,7 @@ export default {
     }),
     methods: {
         signup(){
-            this.Session.SignUp(this.email,this.fname,this.lname,this.handle, this.password);
+            this.list.SignUp(this.email,this.fname,this.lname,this.handle, this.password);
         }
     }
 }
