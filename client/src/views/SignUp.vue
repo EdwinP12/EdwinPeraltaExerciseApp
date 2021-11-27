@@ -1,24 +1,24 @@
 <template>
-  <form action="/action_page.php" style="border:1px solid #ccc">
+  <form action="/register" style="border:1px solid #ccc">
   <div class="container">
     <h1>Sign Up</h1>
     <p>Please fill in this form to create an account.</p>
     <hr>
 
     <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" v-model="email" required>
+    <input type="text" placeholder="Enter Email" name="email" id="email" v-model="email" required >
 
     <label for="fname"><b>FirstName</b></label>
-    <input type="text" placeholder="Enter First Name" name="fname" v-model="fname" required>
+    <input type="text" placeholder="Enter First Name" name="fname" id="fname" v-model="fname" required>
 
     <label for="lname"><b>LastName</b></label>
-    <input type="text" placeholder="Enter Last Name" name="lname" v-model="lname" required>
+    <input type="text" placeholder="Enter Last Name" name="lname" id="lname" v-model="lname" required>
 
     <label for="uname"><b>Handle</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" v-model="handle" required>
+    <input type="text" placeholder="Enter Username" name="uname" id="handle" v-model="handle" required>
 
     <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" v-model="password" required>
+    <input type="password" placeholder="Enter Password" name="psw" id="password"  v-model="password" required>
     
     <label>
       <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
@@ -35,22 +35,19 @@
 </template>
 
 <script>
-import { Session } from "../services/session";
+import Session from "../services/session";
 export default {
-  name: 'SignUp',
-    data: ()=>({
-      email:null,
-      fname: null,
-      lname: null,
-      handle: null,
-      password: null,
-      Session
-    }),
+    data (){
+        return ({ 
+            Session
+        })
+    },
     methods: {
         signup(){
-            this.Session.Add(this.email,this.fname,this.lname,this.handle, this.password);
+            this.$router.push('/signup');
+            //this.Session.Login();
         }
-    }
+    },
 }
 </script>
 
