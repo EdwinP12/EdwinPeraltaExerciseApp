@@ -6,19 +6,19 @@
     <hr>
 
     <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" id="email" v-model="email" required >
+    <input type="text" placeholder="Enter Email" name="email" id="email" v-model="user.email" required >
 
     <label for="fname"><b>FirstName</b></label>
-    <input type="text" placeholder="Enter First Name" name="fname" id="fname" v-model="fname" required>
+    <input type="text" placeholder="Enter First Name" name="fname" id="fname" v-model="user.fname" required>
 
     <label for="lname"><b>LastName</b></label>
-    <input type="text" placeholder="Enter Last Name" name="lname" id="lname" v-model="lname" required>
+    <input type="text" placeholder="Enter Last Name" name="lname" id="lname" v-model="user.lname" required>
 
     <label for="uname"><b>Handle</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" id="handle" v-model="handle" required>
+    <input type="text" placeholder="Enter Username" name="uname" id="handle" v-model="user.handle" required>
 
     <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" id="password"  v-model="password" required>
+    <input type="password" placeholder="Enter Password" name="psw" id="password"  v-model="user.password" required>
     
     <label>
       <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
@@ -35,19 +35,26 @@
 </template>
 
 <script>
-import Session from "../services/session";
+import { Add } from "../services/users";
 export default {
-    data (){
-        return ({ 
-            Session
-        })
+    props: {
+        newUser: Object
+    },
+    data(){
+        return {
+            user: this.newUser
+        }
+    },
+    watch: {
+        newUser(){
+            this.user = this.newUser;
+        }
     },
     methods: {
         signup(){
-            this.$router.push('/signup');
-            //this.Session.Login();
+            Add(this.user);
         }
-    },
+    }
 }
 </script>
 
