@@ -1,5 +1,5 @@
 import router from "../router";
-import { Login } from "./users";
+import { Add, Login } from "./users";
 import { NotificationProgrammatic } from "@oruga-ui/oruga-next/dist/esm/notification";
 
 const session = {
@@ -10,6 +10,19 @@ const session = {
 
         try {
             const response = await Login(handle, password);
+
+            this.user = response.user;
+    
+            router.push(this.toRoute);
+                
+        } catch (error) {
+            this.Error(error);
+        }
+    },
+    async Add(email,fname,lname,handle,password){
+
+        try {
+            const response = await Add(handle);
 
             this.user = response.user;
     

@@ -35,17 +35,20 @@
 </template>
 
 <script>
+import { Session } from "../services/session";
 export default {
+  name: 'SignUp',
     data: ()=>({
       email:null,
       fname: null,
       lname: null,
       handle: null,
       password: null,
+      Session
     }),
     methods: {
         signup(){
-            this.list.SignUp(this.email,this.fname,this.lname,this.handle, this.password);
+            this.Session.Add(this.email,this.fname,this.lname,this.handle, this.password);
         }
     }
 }

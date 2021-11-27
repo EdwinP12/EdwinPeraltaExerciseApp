@@ -16,7 +16,7 @@ const list = [
         emails: [
             "plotkinm@newpaltz.edu"
         ],
-        following: [ { handle: '@vp', isApproved: true }, { handle: '@johnsmith', isApproved: true }, ],
+        following: [ ],
         get name(){ return this.firstName + ' ' + this.lastName },
     },
 
