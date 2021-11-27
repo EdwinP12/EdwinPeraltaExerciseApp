@@ -125,3 +125,6 @@ DELETE  http://localhost:3100/posts/comments/619687bdb64f4cabade5bb1e
 
 ###
 POST http://localhost:3100/posts/seed
+
+###
+POST http://localhost:3100/users/seed

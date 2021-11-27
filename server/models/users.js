@@ -19,6 +19,45 @@ const list = [
         following: [ ],
         get name(){ return this.firstName + ' ' + this.lastName },
     },
+    { 
+        firstName: 'Joseph',
+        lastName: 'Smith',
+        handle: '@JSmith',
+        pic: 'https://images.livemint.com/img/2021/08/10/1200x900/20201025_MUM-PC-MN_Gym_Reopen_015_1628583917333_1628583934428.JPG',
+        password: 'strong',
+        isAdmin: true,
+        emails: [
+            "JosephS@gmail.com"
+        ],
+        following: [ ],
+        get name(){ return this.firstName + ' ' + this.lastName },
+    },
+    { 
+        firstName: 'John',
+        lastName: 'Doe',
+        handle: '@JDoe',
+        pic: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgTf_g526I0vEz5JTkLL2OHN67uXyRr2Up3A&usqp=CAU',
+        password: 'gym',
+        isAdmin: true,
+        emails: [
+            "Johndgym@gmail.com"
+        ],
+        following: [ ],
+        get name(){ return this.firstName + ' ' + this.lastName },
+    },
+    { 
+        firstName: 'Alice',
+        lastName: 'Baker',
+        handle: '@ABaker',
+        pic: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSR1Mguaf76EdqHQnpBuETeY1cmBhhp3EttsQ&usqp=CAU',
+        password: 'workout',
+        isAdmin: true,
+        emails: [
+            "AliceB@gmail.com"
+        ],
+        following: [ ],
+        get name(){ return this.firstName + ' ' + this.lastName },
+    },
 
 ];
 

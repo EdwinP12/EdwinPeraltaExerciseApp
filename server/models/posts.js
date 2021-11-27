@@ -11,7 +11,7 @@ const list = [
         alt: "Placeholder image",
         caption: "Lorem Ipsom",
         time: Date(),
-        user_handle: "@johnsmith",
+        user_handle: "@JDoe",
         isPublic: true,
     },
     { 
@@ -19,7 +19,7 @@ const list = [
         alt: "Placeholder image",
         caption: "We want Moshiach Now",
         time: Date(),
-        user_handle: "@vp",
+        user_handle: "@ABaker",
         isPublic: true,
     },
     { 
@@ -35,7 +35,7 @@ const list = [
         alt: "Mug with slogan",
         caption: "Never be afraid to try something new. The ark was built by amateurs and the Titanic by professionals",
         time: Date(),
-        user_handle: "@JewPaltz",
+        user_handle: "@JSmith",
         isPublic: true,
     },
     { 
