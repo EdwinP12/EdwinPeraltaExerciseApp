@@ -5,20 +5,22 @@
     <p>Please fill in this form to create an account.</p>
     <hr>
 
-    <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" id="email" v-model="user.email" required >
+    <label for="firstName"><b>FirstName</b></label>
+    <input type="text" placeholder="Enter First Name" name="fistName" id="fname" v-model="fistName" required>
 
-    <label for="fname"><b>FirstName</b></label>
-    <input type="text" placeholder="Enter First Name" name="fname" id="fname" v-model="user.fname" required>
+    <label for="lastName"><b>LastName</b></label>
+    <input type="text" placeholder="Enter Last Name" name="lastName" id="lname" v-model="lastName" required>
 
-    <label for="lname"><b>LastName</b></label>
-    <input type="text" placeholder="Enter Last Name" name="lname" id="lname" v-model="user.lname" required>
+    <label for="handle"><b>Handle</b></label>
+    <input type="text" placeholder="Enter Username" name="handle" id="handle" v-model="handle" required>
 
-    <label for="uname"><b>Handle</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" id="handle" v-model="user.handle" required>
+    <hidden type="boolean" value="true" name="isAdmin" id="isAdmin" v-model="isAdmin"></hidden>
 
     <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" id="password"  v-model="user.password" required>
+    <input type="password" placeholder="Enter Password" name="password" id="password"  v-model="password" required>
+
+    <label for="emails"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" id="email" v-model="emails" required >
     
     <label>
       <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
@@ -35,27 +37,19 @@
 </template>
 
 <script>
-import { Add } from "../services/users";
+import Session from "../services/session";
 export default {
-  name:'signup',
-    props: {
-        newUser: Object
-    },
-    data(){
-        return {
-            user: this.newUser
-        }
-    },
-    watch: {
-        newUser(){
-            this.user = this.newUser;
-        }
+    data (){
+        return ({ 
+            Session
+        })
     },
     methods: {
         signup(){
-            Add(this.user);
+            this.$router.push('/signup');
+            //this.Session.Login();
         }
-    }
+    },
 }
 </script>
 
