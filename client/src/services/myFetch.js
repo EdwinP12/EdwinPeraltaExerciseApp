@@ -27,3 +27,4 @@ export async function api(url, data = null, method = null){
         session.Error(err);
     }
 }
+export default api;

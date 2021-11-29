@@ -1,15 +1,15 @@
 <template>
-  <form action="/signup" style="border:1px solid #ccc">
+  <form action="/myFetch.js" method="post" style="border:1px solid #ccc">
   <div class="container">
     <h1>Sign Up</h1>
     <p>Please fill in this form to create an account.</p>
     <hr>
 
     <label for="firstName"><b>FirstName</b></label>
-    <input type="text" placeholder="Enter First Name" name="fistName" id="fname" v-model="fistName" required>
+    <input type="text" placeholder="Enter First Name" name="firstName" id="firstName" v-model="firstName" required>
 
     <label for="lastName"><b>LastName</b></label>
-    <input type="text" placeholder="Enter Last Name" name="lastName" id="lname" v-model="lastName" required>
+    <input type="text" placeholder="Enter Last Name" name="lastName" id="lastName" v-model="lastName" required>
 
     <label for="handle"><b>Handle</b></label>
     <input type="text" placeholder="Enter Username" name="handle" id="handle" v-model="handle" required>
@@ -37,16 +37,22 @@
 </template>
 
 <script>
-import Session from "../services/session";
+import api from "../services/myFetch";
 export default {
     data (){
         return ({ 
-            Session
+            firstName: null,
+            lastName: null,
+            handle: null,
+            emails: null,
+            password: null,
+            isAdmin: true,
+            api
         })
     },
     methods: {
         signup(){
-            this.$router.push('/signup');
+            this.api( );
             //this.Session.Login();
         }
     },
