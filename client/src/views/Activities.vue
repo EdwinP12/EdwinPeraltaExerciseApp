@@ -1,148 +1,171 @@
 <template>
-<div>
-    <h1><strong>Activity Calendar</strong></h1>
-<div class="month">      
-  <ul>
-    <li class="prev">&#10094;</li>
-    <li class="next">&#10095;</li>
-    <li>
-      August<br>
-      <span style="font-size:18px">2021</span>
-    </li>
-  </ul>
-</div>
-
-<ul class="weekdays">
-  <li>Mo</li>
-  <li>Tu</li>
-  <li>We</li>
-  <li>Th</li>
-  <li>Fr</li>
-  <li>Sa</li>
-  <li>Su</li>
-</ul>
-
-<ul class="days">  
-  <li>1</li>
-  <li>2</li>
-  <li>3</li>
-  <li>4</li>
-  <li>5</li>
-  <li>6</li>
-  <li>7</li>
-  <li>8</li>
-  <li>9</li>
-  <li><span class="active">10</span></li>
-  <li>11</li>
-  <li>12</li>
-  <li>13</li>
-  <li>14</li>
-  <li>15</li>
-  <li>16</li>
-  <li>17</li>
-  <li>18</li>
-  <li>19</li>
-  <li>20</li>
-  <li>21</li>
-  <li>22</li>
-  <li>23</li>
-  <li>24</li>
-  <li>25</li>
-  <li>26</li>
-  <li>27</li>
-  <li>28</li>
-  <li>29</li>
-  <li>30</li>
-  <li>31</li>
-</ul>
-</div>
+  <div class="text-center section">
+    <h2 class="h2">Activity Calander</h2>
+    <v-calendar
+      class="custom-calendar max-w-full"
+      :masks="masks"
+      :attributes="attributes"
+      disable-page-swipe
+      is-expanded
+    >
+      <template v-slot:day-content="{ day, attributes }">
+        <div class="flex flex-col h-full z-10 overflow-hidden">
+          <span class="day-label text-sm text-gray-900">{{ day.day }}</span>
+          <div class="flex-grow overflow-y-auto overflow-x-auto">
+            <p
+              v-for="attr in attributes"
+              :key="attr.key"
+              class="text-xs leading-tight rounded-sm p-1 mt-0 mb-1"
+              :class="attr.customData.class"
+            >
+              {{ attr.customData.title }}
+            </p>
+          </div>
+        </div>
+      </template>
+    </v-calendar>
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'Activities',
-  components: {
-    
-  }
-}
+  data() {
+    const month = new Date().getMonth();
+    const year = new Date().getFullYear();
+    return {
+      masks: {
+        weekdays: 'WWW',
+      },
+      attributes: [
+        {
+          key: 1,
+          customData: {
+            title: 'Lunch with mom.',
+            class: 'bg-red-600 text-white',
+          },
+          dates: new Date(year, month, 1),
+        },
+        {
+          key: 2,
+          customData: {
+            title: 'Take Noah to basketball practice',
+            class: 'bg-blue-500 text-white',
+          },
+          dates: new Date(year, month, 2),
+        },
+        {
+          key: 3,
+          customData: {
+            title: "Noah's basketball game.",
+            class: 'bg-blue-500 text-white',
+          },
+          dates: new Date(year, month, 5),
+        },
+        {
+          key: 4,
+          customData: {
+            title: 'Take car to the shop',
+            class: 'bg-indigo-500 text-white',
+          },
+          dates: new Date(year, month, 5),
+        },
+        {
+          key: 4,
+          customData: {
+            title: 'Meeting with new client.',
+            class: 'bg-teal-500 text-white',
+          },
+          dates: new Date(year, month, 7),
+        },
+        {
+          key: 5,
+          customData: {
+            title: "Mia's gymnastics practice.",
+            class: 'bg-pink-500 text-white',
+          },
+          dates: new Date(year, month, 11),
+        },
+        {
+          key: 6,
+          customData: {
+            title: 'Cookout with friends.',
+            class: 'bg-orange-500 text-white',
+          },
+          dates: { months: 5, ordinalWeekdays: { 2: 1 } },
+        },
+        {
+          key: 7,
+          customData: {
+            title: "Mia's gymnastics recital.",
+            class: 'bg-pink-500 text-white',
+          },
+          dates: new Date(year, month, 22),
+        },
+        {
+          key: 8,
+          customData: {
+            title: 'Visit great grandma.',
+            class: 'bg-red-600 text-white',
+          },
+          dates: new Date(year, month, 25),
+        },
+      ],
+    };
+  },
+};
 </script>
 
-<style>
-.month {
-  padding: 70px 25px;
+<style lang="postcss" scoped>
+::-webkit-scrollbar {
+  width: 0px;
+}
+::-webkit-scrollbar-track {
+  display: none;
+}
+/deep/ .custom-calendar.vc-container {
+  --day-border: 1px solid #b8c2cc;
+  --day-border-highlight: 1px solid #b8c2cc;
+  --day-width: 90px;
+  --day-height: 90px;
+  --weekday-bg: #f8fafc;
+  --weekday-border: 1px solid #eaeaea;
+  border-radius: 0;
   width: 100%;
-  background: #13025c;
-  text-align: center;
-}
-
-.month ul {
-  margin: 0;
-  padding: 0;
-}
-
-.month ul li {
-  color: white;
-  font-size: 20px;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-}
-
-.month .prev {
-  float: left;
-  padding-top: 10px;
-}
-
-.month .next {
-  float: right;
-  padding-top: 10px;
-}
-
-.weekdays {
-  margin: 0;
-  padding: 10px 0;
-  background-color: #ddd;
-}
-
-.weekdays li {
-  display: inline-block;
-  width: 13.6%;
-  color: #666;
-  text-align: center;
-}
-
-.days {
-  padding: 10px 0;
-  background: #eee;
-  margin: 0;
-}
-
-.days li {
-  list-style-type: none;
-  display: inline-block;
-  width: 13.6%;
-  text-align: center;
-  margin-bottom: 5px;
-  font-size:12px;
-  color: #777;
-}
-
-.days li .active {
-  padding: 5px;
-  background: #07057a;
-  color: white !important
-}
-
-/* Add media queries for smaller screens */
-@media screen and (max-width:720px) {
-  .weekdays li, .days li {width: 13.1%;}
-}
-
-@media screen and (max-width: 420px) {
-  .weekdays li, .days li {width: 12.5%;}
-  .days li .active {padding: 2px;}
-}
-
-@media screen and (max-width: 290px) {
-  .weekdays li, .days li {width: 12.2%;}
+  & .vc-header {
+    background-color: #f1f5f8;
+    padding: 10px 0;
+  }
+  & .vc-weeks {
+    padding: 0;
+  }
+  & .vc-weekday {
+    background-color: var(--weekday-bg);
+    border-bottom: var(--weekday-border);
+    border-top: var(--weekday-border);
+    padding: 5px 0;
+  }
+  & .vc-day {
+    padding: 0 5px 3px 5px;
+    text-align: left;
+    height: var(--day-height);
+    min-width: var(--day-width);
+    background-color: white;
+    &.weekday-1,
+    &.weekday-7 {
+      background-color: #eff8ff;
+    }
+    &:not(.on-bottom) {
+      border-bottom: var(--day-border);
+      &.weekday-1 {
+        border-bottom: var(--day-border-highlight);
+      }
+    }
+    &:not(.on-right) {
+      border-right: var(--day-border);
+    }
+  }
+  & .vc-day-dots {
+    margin-bottom: 5px;
+  }
 }
 </style>
