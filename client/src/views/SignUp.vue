@@ -1,5 +1,6 @@
+
 <template>
-  <form action="/myFetch.js" method="post" style="border:1px solid #ccc">
+  <form style="border:1px solid #ccc">
   <div class="container">
     <h1>Sign Up</h1>
     <p>Please fill in this form to create an account.</p>
@@ -30,14 +31,14 @@
 
     <div class="clearfix">
       <button type="button" class="cancelbtn">Cancel</button>
-      <button type="submit" class="signupbtn" @click=signup >Sign Up</button>
+      <button type="submit" class="signupbtn" @click="signup" >Sign Up</button>
     </div>
   </div>
 </form>
 </template>
 
 <script>
-import api from "../services/myFetch";
+import { Add } from '../services/users';
 export default {
     data (){
         return ({ 
@@ -47,13 +48,16 @@ export default {
             emails: null,
             password: null,
             isAdmin: true,
-            api
         })
     },
     methods: {
-        signup(){
-            this.api( );
-            //this.Session.Login();
+        async signup(){
+          const response = await Add( { firstName: this.firstName, lastName: this.lastName, handle: this.handle, emails: this.emails, password: this.password, isAdmin: this.isAdmin  } );
+            if(response)
+            {
+              this.$router.push('/login');
+            }
+            
         }
     },
 }
