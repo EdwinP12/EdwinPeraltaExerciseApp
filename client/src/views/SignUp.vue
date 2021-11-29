@@ -13,8 +13,11 @@
     <input type="text" placeholder="Enter Last Name" name="lastName" id="lastName" v-model="lastName" required>
 
     <label for="handle"><b>Handle</b></label>
-    <input type="text" placeholder="Enter Username" name="handle" id="handle" v-model="handle" required>
+    <input type="text" placeholder="Enter Handle" name="handle" id="handle" v-model="handle" required>
 
+    <label for="picture"><b>Picture</b></label>
+    <input type="url" placeholder="Enter Picture" name="picture" id="picture" v-model="picture" required>
+    <br>
     <label for="psw"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="password" id="password"  v-model="password" required>
 
@@ -46,7 +49,7 @@ export default {
             firstName: null,
             lastName: null,
             handle: null,
-            pic:null,
+            picture:null,
             password: null,
             isAdmin: false,
             emails: null,
@@ -54,7 +57,7 @@ export default {
     },
     methods: {
         async signup(){
-          const response = await Add( { firstName: this.firstName, lastName: this.lastName, handle: this.handle, emails: this.emails, password: this.password, isAdmin: this.isAdmin} );
+          const response = await Add( { firstName: this.firstName, lastName: this.lastName, handle: this.handle, pic: this.picture, password: this.password, isAdmin: this.isAdmin} );
             console.log(response);
             if(response)
             {
