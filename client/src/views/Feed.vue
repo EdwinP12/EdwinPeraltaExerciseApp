@@ -3,20 +3,6 @@
       <h1 class="title"> Feed Page </h1>
 
       <div class="columns">
-        <div class="column is-one-third is-offset-one-third">
-
-
-          <!--
-          <div class="column">
-              <div class="card">
-                  <div class="card-content">
-                      {{newPost}}
-                  </div>
-              </div>
-          </div>
-            -->
-        <div >
-
             <post-edit :new-post="newPost" @add="add()" />
 
             <div class="post" v-for=" (p, i) in posts" :key="p.src">
@@ -29,8 +15,6 @@
             <post :post="newPost" />
         </div>
       </div>
-      </div>
-  </div>
 </template>
 <script>
 import Post from '../components/Post.vue';
