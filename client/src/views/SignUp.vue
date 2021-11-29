@@ -15,10 +15,10 @@
     <label for="handle"><b>Handle</b></label>
     <input type="text" placeholder="Enter Username" name="handle" id="handle" v-model="handle" required>
 
-    <hidden type="boolean" value="true" name="isAdmin" id="isAdmin" v-model="isAdmin"></hidden>
-
     <label for="psw"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="password" id="password"  v-model="password" required>
+
+    <hidden type="boolean" name="isAdmin" id="isAdmin" v-model="isAdmin"></hidden>
 
     <label for="emails"><b>Email</b></label>
     <input type="text" placeholder="Enter Email" name="email" id="email" v-model="emails" required >
@@ -31,7 +31,7 @@
 
     <div class="clearfix">
       <button type="button" class="cancelbtn">Cancel</button>
-      <button type="submit" class="signupbtn" @click="signup" >Sign Up</button>
+      <button type="submit" class="signupbtn" @click.prevent="signup" >Sign Up</button>
     </div>
   </div>
 </form>
@@ -42,17 +42,20 @@ import { Add } from '../services/users';
 export default {
     data (){
         return ({ 
+          
             firstName: null,
             lastName: null,
             handle: null,
-            emails: null,
+            pic:null,
             password: null,
             isAdmin: true,
+            emails: null,
         })
     },
     methods: {
         async signup(){
-          const response = await Add( { firstName: this.firstName, lastName: this.lastName, handle: this.handle, emails: this.emails, password: this.password, isAdmin: this.isAdmin  } );
+          const response = await Add( { firstName: this.firstName, lastName: this.lastName, handle: this.handle, emails: this.emails, password: this.password, isAdmin: this.isAdmin} );
+            console.log(response);
             if(response)
             {
               this.$router.push('/login');
