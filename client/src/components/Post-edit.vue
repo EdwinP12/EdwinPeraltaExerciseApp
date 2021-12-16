@@ -81,7 +81,7 @@ export default {
         }
     },
     async mounted(){
-        this.posts = await GetFriends(session.user.friends)
+        this.friends = await GetFriends(session.user.friends)
     },
     watch: {
         newPost(){
