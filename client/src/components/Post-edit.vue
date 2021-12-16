@@ -35,7 +35,7 @@
                     <label class="label">Tag A Friend</label>
                     <div class="control">
                             <p class="content"><b>Selected:</b> {{ selected }}</p>
-                            <o-autocomplete rounded expanded v-model="name" :data="filteredDataArray" placeholder="e.g. jQuery" clearable @select="option => selected = option">
+                            <o-autocomplete rounded expanded v-model="friends" :data="filteredDataArray" placeholder="e.g. jQuery" clearable @select="option => selected = option">
                                 <template v-slot:empty>No results found</template>
                             </o-autocomplete>
                     </div>
@@ -76,7 +76,7 @@ export default {
         post: this.newPost,
         friends: [],
         friendsList: friendsList(),
-        name: '',
+        friends: '',
         selected: null
         }
     },
@@ -95,7 +95,7 @@ export default {
             option
               .toString()
               .toLowerCase()
-              .indexOf(this.name.toLowerCase()) >= 0
+              .indexOf(this.friends.toLowerCase()) >= 0
           )
         })
       }
