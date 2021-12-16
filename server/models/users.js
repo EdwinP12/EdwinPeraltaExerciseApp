@@ -28,7 +28,8 @@ module.exports.Get = user_id => collection.findOne({_id: new ObjectId(user_id)})
 
 module.exports.GetByHandle = (handle) => collection.findOne({ handle }).then(x=> ({ ...x, password: undefined }));
 
-module.exports.GetFriend = (friends) => collection.findOne({ friends }).then(x=> ({ ...x, password: undefined }));
+module.exports.GetFriend = (friends) => collection.find({ friends: new RegExp(q,"i") }).toArray();
+
 
 module.exports.Add = async function Add(user) {
     if(!user.firstName){
