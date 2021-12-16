@@ -11,15 +11,6 @@
                     <div class="name_profile" v-else>
                         {{name}}
                     </div>
-             <div class="gap-3 mt-3 icons d-flex flex-row justify-content-center align-items-center"> 
-                <span><i class="fa fa-twitter">Twitter</i></span>
-                <br>
-                <span><i class="fa fa-facebook-f">Facebook</i></span>
-                <br>
-                <span><i class="fa fa-instagram">Instagram</i></span> 
-                <br>
-                <span><i class="fa fa-linkedin">Linkedin</i></span> 
-             </div>
             <div class="d-flex flex-row justify-content-center align-items-center mt-3"> 
                 <span class="number">xxxx<span class="follow">Followers</span>
                 </span> 
