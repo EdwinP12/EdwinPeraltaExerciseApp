@@ -76,7 +76,6 @@ export default {
         post: this.newPost,
         friends: [],
         friendsList: friendsList(),
-        friends: '',
         selected: null
         }
     },
