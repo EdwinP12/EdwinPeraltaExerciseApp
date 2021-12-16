@@ -64,13 +64,8 @@
     </form>
 </template>
 <script>
-<<<<<<< HEAD
 import { GetFriends } from "../services/users";
 import session from "../services/session";
-=======
-import session from '../services/session';
-import { GetByFriends } from '../services/users';
->>>>>>> 266da40eddf3c03eaf84258a23a1caf48d582bd7
 const friendsList = ()=> ({ user: session.user, user_friends: session.user.friends })
 export default {
     props: {
@@ -78,7 +73,6 @@ export default {
     },
     data(){
         return {
-<<<<<<< HEAD
         post: this.newPost,
         friends: [],
         friendsList: friendsList(),
@@ -88,16 +82,6 @@ export default {
     },
     async mounted(){
         this.posts = await GetFriends(session.user.friends)
-=======
-            post: this.newPost,
-            friendsList: friendsList(),
-            friends: '',
-            selected: null
-        }
-    },
-    async mounted(){
-        this.friends = await GetByFriends(session.user.friends)
->>>>>>> 266da40eddf3c03eaf84258a23a1caf48d582bd7
     },
     watch: {
         newPost(){
@@ -106,20 +90,12 @@ export default {
     },
      computed: {
       filteredDataArray() {
-<<<<<<< HEAD
         return this.friendsList.filter(option => {
-=======
-        return this.data.filter(option => {
->>>>>>> 266da40eddf3c03eaf84258a23a1caf48d582bd7
           return (
             option
               .toString()
               .toLowerCase()
-<<<<<<< HEAD
               .indexOf(this.name.toLowerCase()) >= 0
-=======
-              .indexOf(this.friends.toLowerCase()) >= 0
->>>>>>> 266da40eddf3c03eaf84258a23a1caf48d582bd7
           )
         })
       }
