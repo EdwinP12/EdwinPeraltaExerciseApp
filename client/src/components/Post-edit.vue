@@ -22,6 +22,15 @@
                     </div>
                 </div>
 
+                <section>
+                    <p class="content"><b>Tag a friend:</b> {{ selected }}</p>
+                        <o-field label="Find a JS framework">
+                        <o-autocomplete rounded expanded v-model="friends" :data="filteredDataArray" placeholder="e.g. Friends" clearable @select="option => selected = option">
+                            <template v-slot:empty>No results found</template>
+                        </o-autocomplete>
+                    </o-field>
+                </section>
+
                 <div class="field">
                     <div class="control">
                         <label class="radio">
@@ -46,19 +55,40 @@
 </template>
 
 <script>
+import session from '../services/session';
+import { GetByFriends } from '../services/users';
+const friendsList = ()=> ({ user: session.user, user_friends: session.user.friends })
 export default {
     props: {
         newPost: Object
     },
     data(){
         return {
-            post: this.newPost
+            post: this.newPost,
+            friendsList: friendsList(),
+            friends: '',
+            selected: null
         }
+    },
+    async mounted(){
+        this.friends = await GetByFriends(session.user.friends)
     },
     watch: {
         newPost(){
             this.post = this.newPost;
         }
+    },
+     computed: {
+      filteredDataArray() {
+        return this.data.filter(option => {
+          return (
+            option
+              .toString()
+              .toLowerCase()
+              .indexOf(this.friends.toLowerCase()) >= 0
+          )
+        })
+      }
     }
 }
 </script>

@@ -1,7 +1,7 @@
 <template>
   <div class="card">
   <div class="card-image">
-    <figure class="image is-3by2">
+    <figure class="image is-4by3">
       <img :src="post.src" :alt="post.alt">
         <button class="delete" @click="$emit('remove')"></button>
     </figure>
@@ -9,13 +9,13 @@
   <div class="card-content">
     <div class="media">
       <div class="media-left">
-        <figure>
+        <figure class="image is-16x16">
           <img :src="post.user.pic" alt="Placeholder image">
         </figure>
       </div>
       <div class="media-content">
         <p > {{post.user.firstName}} {{post.user.lastName}} </p>
-        <p >
+        <p class="subtitle is-6">
             {{post.user.handle}}
                   <time :datetime="post.time">{{prettyDate}}</time>
         </p>

@@ -3,7 +3,7 @@ import { api } from "./myFetch";
 export function GetAll() { return api('users'); }
 export function Get(user_id) { return  api('users/' + user_id); }
 export function GetByHandle(handle) { return  api('users/byhandle/' + handle); } 
-
+export function GetByFriends(friends) { return  api('users/friends/' + friends); }
 export function Add(user) {
      return api('users/register', user);
 }
