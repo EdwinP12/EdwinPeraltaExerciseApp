@@ -28,6 +28,8 @@ module.exports.Get = user_id => collection.findOne({_id: new ObjectId(user_id)})
 
 module.exports.GetByHandle = (handle) => collection.findOne({ handle }).then(x=> ({ ...x, password: undefined }));
 
+module.exports.GetFriend = (friends) => collection.findOne({ friends }).then(x=> ({ ...x, password: undefined }));
+
 module.exports.Add = async function Add(user) {
     if(!user.firstName){
          return Promise.reject( { code: 422, msg: "First Name is required" } )
@@ -85,6 +87,7 @@ module.exports.Login = async function Login(handle, password){
 
     
 }
+
 module.exports.Seed = async ()=>{
     for (const x of list) {
         await module.exports.Add(x)

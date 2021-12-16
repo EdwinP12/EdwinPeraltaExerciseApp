@@ -12,6 +12,13 @@ app
         })
         .catch(next) 
     })
+    .get("/friendlist/:friends", (req, res, next) =>{
+        model.GetFriends(req.params.friends)
+            .then(user=>{ 
+                res.send(user);
+            })
+            .catch(next) 
+    })
     .get("/:user_id", (req, res, next) =>{
         model.Get(req.params.user_id)
            .then(user=>{ 
